@@ -6,3 +6,14 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     id: 'adityarj.0mbl5ab1',
     accessToken: 'pk.eyJ1IjoiYWRpdHlhcmoiLCJhIjoiY2lwczQ0dzFmMDJqcWZsbTI3bDJld2JoNSJ9.mpkJWXaUYoE1jtAn6a9Mvw'
 }).addTo(MyMap);
+
+d3.csv("data.csv", function(data) {
+	data.forEach(function(entry) {
+		L.circleMarker([entry.Lat,entry.Long], {
+			color: 'red',
+			fillColor: '#f03',
+			fillOpacity: 0.5,
+			radius: 2
+		}).addTo(MyMap);
+	})
+});
