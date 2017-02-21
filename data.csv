@@ -1,9 +1,9 @@
-﻿Place,Lat,Long,Times,Date
-Bedok,1.324877,103.9292199,1,"11th February 2017"
-Orchard Central,1.300663,103.839725,1,"12th February 2017"
-National  Museum,1.2966375,103.8486646,1,"12th February 2017"
-Tampines 1,1.3542633,103.9450295,1,"14th February 2017"
-Simei Coffee Shop,1.3430823,103.9537948,1,"14th February 2017"
-Seletar Aerospace Park,1.4104743,103.8683976,1,"16th February 2017"
-CCP,1.3339892,103.9629998,1,"18th February 2017"
-Centre 42,1.298424,103.8507802,1,"19th February 2017"
+﻿Place,Lat,Long,Times,Date,Reason
+Bedok,1.324877,103.9292199,1,"11th February 2017","Productions Gotham Client Meeting"
+Orchard Central,1.300663,103.839725,1,"12th February 2017","Shabusai Lunch, worth it"
+National  Museum,1.2966375,103.8486646,1,"12th February 2017","Sneaked in without paying"
+Tampines 1,1.3542633,103.9450295,1,"14th February 2017","Valentines Day Gift Purchase"
+Simei Coffee Shop,1.3430823,103.9537948,1,"14th February 2017","Dapao Fishball Noodle back"
+Seletar Aerospace Park,1.4104743,103.8683976,1,"16th February 2017","Interview with Airbus"
+CCP,1.3339892,103.9629998,1,"18th February 2017","Dinner and Breakfast dapao"
+Centre 42,1.298424,103.8507802,1,"19th February 2017","Aeron's Play, Crossings"

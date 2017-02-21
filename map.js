@@ -11,6 +11,10 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoiYWRpdHlhcmoiLCJhIjoiY2lwczQ0dzFmMDJqcWZsbTI3bDJld2JoNSJ9.mpkJWXaUYoE1jtAn6a9Mvw'
 }).addTo(MyMap);
 
+var popupCSS = {
+	'className': 'popup'
+};
+
 d3.csv("data.csv", function(data) {
 	data.forEach(function(entry) {
 		console.log(color(entry.Times));
@@ -18,6 +22,12 @@ d3.csv("data.csv", function(data) {
 			color: color(entry.Times),
 			fillOpacity: 0.5,
 			radius: 5
-		}).addTo(MyMap);
+		}).bindPopup(popupTextGen(entry.Place,entry.Date,entry.Reason),popupCSS).addTo(MyMap);
 	})
 });
+
+function popupTextGen(text,date,reason) {
+	return "<span class='popUprow titlePopup'><p><b>"+text+"</b></span><span class='popUprow datePopup'>, "+date+"</p></span>"+
+			"<div class='separate'></div>"+
+			"<span class='popUprow'><p>"+reason+"</p></span>";
+}
