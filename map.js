@@ -1,6 +1,8 @@
+var colorList = ['#d9f0a3','#addd8e','#78c679','#31a354','#006837'];
+
 var color = d3.scaleOrdinal()
 				.domain(0,10)
-				.range(['#d9f0a3','#addd8e','#78c679','#31a354','#006837']);
+				.range(colorList);
 
 var MyMap = L.map('MapMain').setView([1.334304, 103.856327], 11);
 
@@ -25,6 +27,30 @@ d3.csv("data.csv", function(data) {
 		}).bindPopup(popupTextGen(entry.Place,entry.Date,entry.Reason),popupCSS).addTo(MyMap);
 	})
 });
+
+var legendTitles = d3.select('#rightLegend')
+	.append('div')
+	.attr('class','firstDiv')
+	.selectAll('.legendTitles')
+	.data(colorList)
+	.enter()
+	.append('div')
+	.attr('class','legendTitles')
+	.text(function(d,i) {
+		return i+1;
+	})
+
+var legend = d3.select("#rightLegend")
+	.append('div')
+	.attr('class','firstDiv')
+	.selectAll('.legendBox')
+	.data(colorList)
+	.enter()
+	.append('div')
+	.attr('class','legendBox')
+	.style('background-color',function(d) {
+		return d;
+	});
 
 function popupTextGen(text,date,reason) {
 	return "<span class='popUprow titlePopup'><p><b>"+text+"</b></span><span class='popUprow datePopup'>, "+date+"</p></span>"+

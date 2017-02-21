@@ -1,3 +1,8 @@
+@blockify: {
+	display: inline-block;
+	float: left;
+};
+
 #MapMain {
 	width: 100%;
 	height: 600px;
@@ -12,6 +17,9 @@
 	background-color: #acb5c4;
 }
 
+#leftCol {
+	background-color: #f2f2f2;
+}
 .popUprow {
 	font-family: 'Typo Grotesk';
 	p {
@@ -31,4 +39,48 @@
 	height: 1px;
 	background-color: black;
 	margin-top: 3px;
+}
+
+.eachColumn {
+	width: 48%;
+	height: 100px;
+	padding-bottom: 30px;
+	@blockify();
+}
+
+.legendBox {
+	@blockify();
+	width: 120px;
+	height: 30px;
+}
+
+.firstDiv {
+	width: 100%;
+	display: block;
+	float: left;
+	margin-left: 20px;
+}
+
+.legendTitles {
+	@blockify();
+	width: 120px;
+	font-family: 'Dosis';
+	text-align: center;
+	vertical-align: middle;
+	line-height: 20px;
+	height: 20px;
+}
+
+#legendHeader {
+	font-family: 'Dosis';
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 8px;
+	margin-bottom: 15px;
+}
+
+#actualText {
+	font-family: 'Dosis';
+	width: 90%;
+	font-size: 18px;
 }
