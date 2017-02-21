@@ -1,3 +1,7 @@
+var color = d3.scaleOrdinal()
+				.domain(0,10)
+				.range(['#d9f0a3','#addd8e','#78c679','#31a354','#006837']);
+
 var MyMap = L.map('MapMain').setView([1.334304, 103.856327], 11);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -9,11 +13,11 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 d3.csv("data.csv", function(data) {
 	data.forEach(function(entry) {
+		console.log(color(entry.Times));
 		L.circleMarker([entry.Lat,entry.Long], {
-			color: 'red',
-			fillColor: '#f03',
+			color: color(entry.Times),
 			fillOpacity: 0.5,
-			radius: 2
+			radius: 5
 		}).addTo(MyMap);
 	})
 });
