@@ -3,6 +3,10 @@
 	float: left;
 };
 
+.textify(@size: 12px,@fontFamily: 'Dosis') {
+	font-family: @fontFamily;
+	font-size: @size;
+}
 #MapMain {
 	width: 100%;
 	height: 600px;
@@ -21,7 +25,7 @@
 	background-color: #f2f2f2;
 }
 .popUprow {
-	font-family: 'Typo Grotesk';
+	.textify(12px,'Typo Grotesk');
 	p {
 		margin-top: 6px;
 		margin-bottom: 0px;
@@ -64,7 +68,7 @@
 .legendTitles {
 	@blockify();
 	width: 120px;
-	font-family: 'Dosis';
+	.textify();
 	text-align: center;
 	vertical-align: middle;
 	line-height: 20px;
@@ -72,15 +76,13 @@
 }
 
 #legendHeader {
-	font-family: 'Dosis';
-	font-size: 20px;
+	.textify(20px);
 	font-weight: 600;
 	margin-top: 8px;
 	margin-bottom: 15px;
 }
 
 #actualText {
-	font-family: 'Dosis';
+	.textify(18px);
 	width: 90%;
-	font-size: 18px;
 }
